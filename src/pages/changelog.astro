@@ -89,16 +89,23 @@ import { SITE_TITLE } from '../consts';
 				const heading = document.createElement('h2');
 				const link = document.createElement('a');
 				const date = document.createElement('time');
-				const message = commit.message.split('\n', 1)[0];
+				const [summary, ...descriptionLines] = commit.message.split('\n');
+				const description = descriptionLines.join('\n').trim();
 
 				link.href = `https://github.com/MetalMan1245/sc2.sarl-source/commit/${commit.sha}`;
 				link.target = '_blank';
 				link.rel = 'noopener noreferrer';
-				link.textContent = message;
+				link.textContent = summary;
 				heading.append(link);
 				date.dateTime = commit.date;
 				date.textContent = dateFormatter.format(new Date(commit.date));
 				item.append(heading, date);
+				if (description) {
+					const descriptionElement = document.createElement('p');
+					descriptionElement.className = 'description';
+					descriptionElement.textContent = description;
+					item.append(descriptionElement);
+				}
 				entries.append(item);
 			}
 			status.remove();
@@ -150,5 +157,12 @@ import { SITE_TITLE } from '../consts';
 	.changelog-entries time {
 		color: rgb(var(--gray));
 		font-size: 0.8em;
+	}
+
+	.changelog-entries .description {
+		margin: 0.5em 0 0;
+		color: rgb(var(--gray-dark));
+		font-size: 0.8em;
+		white-space: pre-line;
 	}
 </style>
