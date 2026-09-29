@@ -54,16 +54,13 @@ import HeaderLink from './HeaderLink.astro';
 				rel="noopener noreferrer"
 				aria-label="Casting Call Club"
 				title="Casting Call Club">
-				<svg viewBox="0 0 32 24" aria-hidden="true" width="32" height="24">
-					<text
-						x="16"
-						y="19"
-						fill="currentColor"
-						font-family="Arial, sans-serif"
-						font-size="13"
-						font-weight="700"
-						text-anchor="middle">CCC</text>
-				</svg>
+				<img
+					class="casting-call-club-logo"
+					src="/casting-call-club-logo.svg"
+					alt=""
+					width="210"
+					height="18"
+				/>
 			</a>
 		</div>
 	</nav>
@@ -109,6 +106,11 @@ import HeaderLink from './HeaderLink.astro';
 	.social-links a {
 		align-items: center;
 		justify-content: center;
+	}
+	.social-links .casting-call-club-logo {
+		width: 210px;
+		max-width: none;
+		border-radius: 0;
 	}
 	@media (max-width: 720px) {
 		.social-links {
