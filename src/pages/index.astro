@@ -25,12 +25,58 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				This is the best place to keep up with what I'm doing, what projects I have published, on the backburner, or if you'd like to get in contact with me.
 			</p>
 			<p>
-				In the meantime, check out my GitHub (programming projects), YouTube (Videos), Bandcamp (Music), and Casting Call Club (Voice Acting) links or Contact me.
+				In the meantime, check out my <a
+					href="https://github.com/MetalMan1245"
+					target="_blank"
+					rel="noopener noreferrer">GitHub</a
+				> (programming projects), <a
+					href="https://www.youtube.com/@MetalMan1245?sub_confirmation=1"
+					target="_blank"
+					rel="noopener noreferrer">YouTube</a
+				> (videos), <a
+					href="https://plague2.bandcamp.com/"
+					target="_blank"
+					rel="noopener noreferrer">Bandcamp</a
+				> (music), and <a
+					href="https://www.castingcall.club/MetalMan1245"
+					target="_blank"
+					rel="noopener noreferrer">Casting Call Club</a
+				> (voice acting), or <a href="#contact">contact me</a>.
 			</p>
+			<section id="contact" aria-labelledby="contact-heading">
+				<h2 id="contact-heading">Contact</h2>
+				<form id="contact-form">
+					<label for="subject">Subject</label>
+					<input id="subject" name="subject" type="text" required />
+
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="6" required></textarea>
+
+					<button type="submit">Submit</button>
+					<p id="contact-status" aria-live="polite"></p>
+				</form>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+<script>
+	const contactForm = document.querySelector<HTMLFormElement>('#contact-form');
+
+	contactForm?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const formData = new FormData(contactForm);
+		const subject = String(formData.get('subject') ?? '').trim();
+		const message = String(formData.get('message') ?? '').trim();
+		const email = new URLSearchParams({ subject, body: message });
+		const status = document.querySelector<HTMLParagraphElement>('#contact-status');
+
+		window.location.href = `mailto:metalman1245@proton.me?${email.toString()}`;
+		if (status) {
+			status.textContent = 'Your email app should open with your message ready to send.';
+		}
+	});
+</script>
 <style>
 	.welcome-heading {
 		display: flex;
@@ -43,5 +89,29 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		height: 1em;
 		border-radius: 0;
 		object-fit: contain;
+	}
+
+	#contact-form {
+		display: grid;
+		gap: 0.5em;
+	}
+
+	#contact-form input,
+	#contact-form textarea {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0.5em;
+		font: inherit;
+	}
+
+	#contact-form button {
+		justify-self: start;
+		padding: 0.5em 1em;
+		font: inherit;
+		cursor: pointer;
+	}
+
+	#contact-status {
+		margin: 0;
 	}
 </style>
