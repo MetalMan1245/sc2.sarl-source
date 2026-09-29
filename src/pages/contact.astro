@@ -45,7 +45,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		const email = new URLSearchParams({ subject, body: message });
 		const status = document.querySelector<HTMLParagraphElement>('#contact-status');
 
-		window.location.href = `mailto:metalman1245@proton.me?${email.toString()}`;
+		window.location.href = `mailto:metalman1245@protonmail.com?${email.toString()}`;
 		if (status) {
 			status.textContent = 'Your email app should open with your message ready to send.';
 		}
