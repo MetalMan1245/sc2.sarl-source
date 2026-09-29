@@ -14,6 +14,10 @@
 			target="_blank"
 			rel="noopener noreferrer">Casting Call Club</a>
 	</div>
+	<div class="changelog">
+			<a href="/changelog">Website changelog</a>
+			<span aria-hidden="true">·</span>
+	</div>
 </footer>
 <style>
 	footer {
@@ -35,5 +39,20 @@
 	}
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
+	}
+	.changelog {
+		display: flex;
+		justify-content: center;
+		gap: 0.5em;
+		margin-top: 0.75em;
+		font-size: 0.8em;
+	}
+	.changelog a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.changelog a:hover {
+		color: rgb(var(--gray-dark));
+		text-decoration: underline;
 	}
 </style>

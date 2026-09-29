@@ -1,3 +1,7 @@
+# Reality
+
+My website is basically the Astro template with LLM changes because I am not a programmer, below is the original Astro README, if you're interested in how the website works under the hood, I am not a good source, I barely understand how it works or if this repo is necessary (pretty sure it's not but code transparency matters to me)
+
 # Astro Starter Kit: Blog
 
 ```sh

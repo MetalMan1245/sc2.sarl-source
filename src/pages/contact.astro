@@ -1,0 +1,78 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Contact | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Contact</h1>
+			<p>Send me a message about inquiries, collaborations, or projects.</p>
+			<p>Submitting this form opens your email app with the message ready to send.</p>
+			<form id="contact-form">
+				<label for="subject">Subject</label>
+				<input id="subject" name="subject" type="text" required />
+
+				<label for="message">Message</label>
+				<textarea id="message" name="message" rows="6" required></textarea>
+
+				<button type="submit">Submit</button>
+				<p id="contact-status" aria-live="polite"></p>
+			</form>
+		</main>
+		<Footer />
+	</body>
+</html>
+<script>
+	const contactForm = document.querySelector<HTMLFormElement>('#contact-form');
+
+	contactForm?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		if (!(event.currentTarget instanceof HTMLFormElement)) {
+			return;
+		}
+
+		const formData = new FormData(event.currentTarget);
+		const subject = String(formData.get('subject') ?? '').trim();
+		const message = String(formData.get('message') ?? '').trim();
+		const email = new URLSearchParams({ subject, body: message });
+		const status = document.querySelector<HTMLParagraphElement>('#contact-status');
+
+		window.location.href = `mailto:metalman1245@proton.me?${email.toString()}`;
+		if (status) {
+			status.textContent = 'Your email app should open with your message ready to send.';
+		}
+	});
+</script>
+<style>
+	#contact-form {
+		display: grid;
+		gap: 0.5em;
+	}
+
+	#contact-form input,
+	#contact-form textarea {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0.5em;
+		font: inherit;
+	}
+
+	#contact-form button {
+		justify-self: start;
+		padding: 0.5em 1em;
+		font: inherit;
+		cursor: pointer;
+	}
+
+	#contact-status {
+		margin: 0;
+	}
+</style>

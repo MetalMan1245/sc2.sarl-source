@@ -1,0 +1,181 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Projects | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section aria-labelledby="active-heading">
+				<h2 id="active-heading">Active</h2>
+				<div class="project-grid">
+					<article class="project-card">
+						<a
+							class="project-image-link"
+							href="https://github.com/MetalMan1245/SC2_Campaign_Launcher_Linux"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="View SC2 Campaign Launcher on GitHub">
+							<img
+								src="https://raw.githubusercontent.com/MetalMan1245/SC2_Campaign_Launcher_Linux/main/img/Screenshot_20260904_224948.png"
+								alt="Screenshot of the SC2 Campaign Launcher"
+								loading="lazy"
+							/>
+						</a>
+						<div class="project-details">
+							<h3>
+								<a
+									href="https://github.com/MetalMan1245/SC2_Campaign_Launcher_Linux"
+									target="_blank"
+									rel="noopener noreferrer">SC2 Campaign Launcher</a
+								>
+							</h3>
+						</div>
+					</article>
+					<article class="project-card">
+						<div class="project-placeholder" aria-hidden="true">VST Helper</div>
+						<div class="project-details">
+							<h3>
+								<a
+									href="https://github.com/MetalMan1245/VST_Helper"
+									target="_blank"
+									rel="noopener noreferrer">VST Helper</a
+								>
+							</h3>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section aria-labelledby="shelved-heading">
+				<h2 id="shelved-heading">Shelved</h2>
+				<div class="project-grid">
+					<article class="project-card">
+						<a
+							class="project-image-link"
+							href="https://www.youtube.com/watch?v=k1D4ClMmOhg&t=51s"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Watch SPM: Nova on YouTube">
+							<img
+								src="https://img.youtube.com/vi/k1D4ClMmOhg/hqdefault.jpg"
+								alt="SPM: Nova video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+						<div class="project-details">
+							<h3>
+								<a
+									href="https://www.youtube.com/watch?v=k1D4ClMmOhg&t=51s"
+									target="_blank"
+									rel="noopener noreferrer">SPM: Nova</a
+								>
+							</h3>
+						</div>
+					</article>
+					<article class="project-card">
+						<a
+							class="project-image-link"
+							href="https://www.youtube.com/watch?v=ukYgmuKl1v0"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Watch Heart of the Revolution on YouTube">
+							<img
+								src="https://img.youtube.com/vi/ukYgmuKl1v0/hqdefault.jpg"
+								alt="Heart of the Revolution video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+						<div class="project-details">
+							<h3>
+								<a
+									href="https://www.youtube.com/watch?v=ukYgmuKl1v0"
+									target="_blank"
+									rel="noopener noreferrer">Heart of the Revolution</a
+								>
+							</h3>
+						</div>
+					</article>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 960px;
+		max-width: calc(100% - 2em);
+	}
+
+	section + section {
+		margin-top: 3em;
+	}
+
+	section h2 {
+		border-bottom: 2px solid rgb(var(--gray-light));
+		padding-bottom: 0.25em;
+	}
+
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5em;
+	}
+
+	.project-card {
+		overflow: hidden;
+		border-radius: 12px;
+		background: white;
+		box-shadow: var(--box-shadow);
+	}
+
+	.project-image-link,
+	.project-image-link img,
+	.project-placeholder {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+	}
+
+	.project-image-link img {
+		object-fit: cover;
+		border-radius: 0;
+	}
+
+	.project-placeholder {
+		display: grid;
+		place-items: center;
+		background: rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+		font-size: 1.5em;
+		font-weight: 700;
+	}
+
+	.project-details {
+		padding: 0.75em 1em;
+	}
+
+	.project-details h3 {
+		margin: 0;
+		font-size: 1.25em;
+	}
+
+	.project-details a {
+		text-decoration: none;
+	}
+
+	@media (max-width: 600px) {
+		.project-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
