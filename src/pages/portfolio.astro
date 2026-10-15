@@ -1,0 +1,212 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Portfolio | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section id="voice" aria-labelledby="voice-heading">
+				<h2 id="voice-heading">Voice Acting</h2>
+				<p>
+					I have much experience as a voice actor, working with prominent modders in the StarCraft 2 community like <a
+					href="https://synergymods.com/"
+					target="_blank"
+					rel="noopener noreferrer">Synergy</a
+				> and lunchbox to make their projects come to life.  I also have significant experience managing projects, with many of my <a
+					href="https://youtu.be/k1D4ClMmOhg"
+					target="_blank"
+					rel="noopener noreferrer">personal projects</a
+				> as well as modding ones requiring keeping track of many other actors' progress, ensuring proper line delivery, coaching, and directing. Included below is a link to a reel of some of my best work, as well as an excerpt of The Yellow Wallpaper read live on stage.
+				</p>
+				<div class="card-row">
+					<article class="mini-card">
+						<a
+							class="mini-card-link"
+							href="https://www.youtube.com/watch?v=CyeBQl6fu8M"
+							target="_blank"
+							rel="noopener noreferrer">
+							<img
+								src="https://img.youtube.com/vi/CyeBQl6fu8M/hqdefault.jpg"
+								alt="YouTube video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+					</article>
+					<article class="mini-card">
+						<a
+							class="mini-card-link"
+							href="https://youtu.be/zPV4M9pLUg8"
+							target="_blank"
+							rel="noopener noreferrer">
+							<img
+								src="https://img.youtube.com/vi/zPV4M9pLUg8/hqdefault.jpg"
+								alt="YouTube video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+					</article>
+				</div>
+			</section>
+
+			<section id="audio" aria-labelledby="audio-heading">
+				<h2 id="audio-heading">Audio Engineering</h2>
+				<p>
+					I am a formally educated Audio Engineer, having graduated at <a
+					href="https://www.cras.edu/"
+					target="_blank"
+					rel="noopener noreferrer">Conservatory of Recording Arts & Sciences</a
+				> near the top of my class, and interned at <a
+					href="https://www.thetonefactory.com/"
+					target="_blank"
+					rel="noopener noreferrer">The Tone Factory Recording Studios</a
+				> for a time.  I have ample experience in music production, having written, recorded, and produced my own music as well as recorded for and with other artists.  I am also the premier audio engineer for a <a
+					href="https://www.youtube.com/@velaroniasunstryder6014"
+					target="_blank"
+					rel="noopener noreferrer">local filmmaker</a
+				>, ensuring proper foley, dialogue, and music balance and quality.  In addition, I am the second primary audio engineer for the <a
+					href="https://bealestreettheater.com/"
+					target="_blank"
+					rel="noopener noreferrer">Beale Street Theater</a
+				>, providing live audio, as well as recording and mixing services there.  Linked below are my latest music project as well as a local filmmaker's project where I was in charge of all audio, including the soundfont of the music.
+				</p>
+				<div class="card-row">
+					<article class="mini-card">
+						<a
+							class="mini-card-link"
+							href="https://www.youtube.com/watch?v=iW5plHNzoIU"
+							target="_blank"
+							rel="noopener noreferrer">
+							<img
+								src="https://img.youtube.com/vi/iW5plHNzoIU/hqdefault.jpg"
+								alt="YouTube video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+					</article>
+					<article class="mini-card">
+						<a
+							class="mini-card-link"
+							href="https://youtu.be/Bps6bZal4eA"
+							target="_blank"
+							rel="noopener noreferrer">
+							<img
+								src="https://img.youtube.com/vi/Bps6bZal4eA/hqdefault.jpg"
+								alt="YouTube video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+					</article>
+				</div>
+			</section>
+
+			<section id="video" aria-labelledby="video-heading">
+				<h2 id="video-heading">Video Editing</h2>
+				<p>
+					I am a trained video editor, having edited videos on my own <a
+					href="https://www.youtube.com/metalman1245"
+					target="_blank"
+					rel="noopener noreferrer">YouTube channel</a
+				> since 2018, editing professionally for two other YouTube channels for a time, as well as editing the pre-show advertisement for <a
+					href="https://bealestreettheater.com/"
+					target="_blank"
+					rel="noopener noreferrer">Beale Street Theater</a
+				> for the vast majority of shows.  I have ample experience working on video projects completely solo, and collaborating with other editors simultaneously and sequentially.  I work primarily in Davinci Resolve but have experience using other NLEs.  Linked below is a trailer for a StarCraft II modding project I was a co-author for, and a recent video edited for a YouTuber client.
+				</p>
+				<div class="card-row">
+					<article class="mini-card">
+						<a
+							class="mini-card-link"
+							href="https://www.youtube.com/watch?v=ukYgmuKl1v0"
+							target="_blank"
+							rel="noopener noreferrer">
+							<img
+								src="https://img.youtube.com/vi/ukYgmuKl1v0/hqdefault.jpg"
+								alt="YouTube video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+					</article>
+					<article class="mini-card">
+						<a
+							class="mini-card-link"
+							href="https://youtu.be/pppiQ4hBqVw"
+							target="_blank"
+							rel="noopener noreferrer">
+							<img
+								src="https://img.youtube.com/vi/pppiQ4hBqVw/hqdefault.jpg"
+								alt="YouTube video thumbnail"
+								loading="lazy"
+							/>
+						</a>
+					</article>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 960px;
+		max-width: calc(100% - 2em);
+		margin: auto;
+		padding: 3em 1em;
+	}
+
+	section + section {
+		margin-top: 3em;
+	}
+
+	section h2 {
+		border-bottom: 2px solid rgb(var(--gray-light));
+		padding-bottom: 0.25em;
+		margin-bottom: 1em;
+	}
+
+	p {
+		font-size: 1em;
+		line-height: 1.7;
+		margin-bottom: 1em;
+	}
+
+	.card-row {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1em;
+		margin-top: 1em;
+	}
+
+	.mini-card {
+		overflow: hidden;
+		border-radius: 8px;
+		background: white;
+		box-shadow: var(--box-shadow);
+	}
+
+	.mini-card-link,
+	.mini-card-link img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+	}
+
+	.mini-card-link img {
+		object-fit: cover;
+		border-radius: 0;
+	}
+
+	@media (max-width: 600px) {
+		.card-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
